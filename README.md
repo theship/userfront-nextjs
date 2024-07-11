@@ -5,10 +5,10 @@
 
 Are you building a Next.js 14 application and looking for a robust, easy-to-implement authentication solution? Look no further! In this comprehensive guide, we'll explore how to integrate Userfront into your Next.js 14 project, and then dive deeper into some best practices.
 
-<h2>**Part 1: Getting Started with Userfront for Next.js 14**</h2>
+<h2>Part 1: Getting Started with Userfront for Next.js 14</h2>
 
 
-<h3>**1. Quick Start Guide**</h3>
+<h3>1. Quick Start Guide</h3>
 
 
 Userfront provides an excellent[ Quick Start guide](https://userfront.com/docs/quickstart?v=next) for Next.js 14. This guide walks you through the basics of setting up Userfront in your project, including:
@@ -19,12 +19,12 @@ Userfront provides an excellent[ Quick Start guide](https://userfront.com/docs/q
 * Adding the Userfront provider to your layout
 * Creating login, signup, and dashboard pages
 
-<h3>**2. @userfront/next npm Package**</h3>
+<h3>2. @userfront/next npm Package</h3>
 
 
 The[ @userfront/next](https://www.npmjs.com/package/@userfront/next) package on npm is specifically designed for Next.js applications. It provides a set of components and hooks that make it easy to add authentication to your Next.js app.
 
-<h3>**3. Userfront Next.js Guide**</h3>
+<h3>3. Userfront Next.js Guide</h3>
 
 
 For a more in-depth look at integrating Userfront with Next.js, check out the[ Userfront Next.js Guide](https://userfront.com/docs/examples/next). This guide covers:
@@ -36,22 +36,22 @@ For a more in-depth look at integrating Userfront with Next.js, check out the[ U
 * Client-side components and hooks
 * Server-side methods and authentication
 
-<h3>**4. Running Example**</h3>
+<h3>4. Running Example</h3>
 
 
 To see Userfront in action with Next.js 14, you can explore the[ Userfront Next.js 14 example](https://github.com/userfront/examples/tree/main/next-14) on GitHub. This example demonstrates a fully functional authentication setup using Userfront in a Next.js 14 application.
 
-<h2>**Part 2: Best Practices**</h2>
+<h2>Part 2: Best Practices</h2>
 
 
 Now that we've covered the basics, let's dive into some best practices for using Userfront with Next.js 14. We'll focus on understanding Next.js 14's design principles and how to keep sensitive data secure.
 
-<h3>**Setting Up the Project**</h3>
+<h3>Setting Up the Project</h3>
 
 
 First, make sure you have a Next.js 14 project set up with Userfront installed. If you haven't done this yet, follow the Quick Start guide mentioned earlier.
 
-<h3>**Creating a Header Component**</h3>
+<h3>Creating a Header Component</h3>
 
 
 Let's start by creating a header component that changes based on the user's authentication status:
@@ -93,7 +93,7 @@ export default function Header() {
 
 This header component uses the `useUserfront` hook to determine if the user is authenticated and displays appropriate navigation links.
 
-<h3>**Securing Routes with Layout**</h3>
+<h3>Securing Routes with Layout</h3>
 
 
 Next, let's create a secure layout that protects our dashboard and other sensitive pages. Secure layouts provide a client-side redirect for unauthenticated users, but remember that true security should be implemented server-side.
@@ -127,7 +127,7 @@ export default function SecureLayout({ children }: { children: React.ReactNode }
 
 This layout ensures that only authenticated users can access the pages within the `(secure)` folder.
 
-<h3>**Creating a Protected Dashboard**</h3>
+<h3>Creating a Protected Dashboard</h3>
 
 
 Now, let's create a protected dashboard page that displays user information. This dashboard component uses client-side data from Userfront, but doesn't inherently provide security. It should be used in conjunction with server-side protections:
@@ -155,7 +155,7 @@ export default function DashboardPage() {
 ```
 
 
-<h3>**Fetching Sensitive User Data**</h3>
+<h3>Fetching Sensitive User Data</h3>
 
 
 `UserDataComponent` demonstrates client-side API calls with authentication tokens, aligning with the 'HTTP APIs' approach. However, it relies on proper server-side implementation for actual security. For fetching sensitive user data, we'll create a separate component that makes an authenticated API call:
@@ -227,7 +227,7 @@ export default function UserDataComponent() {
 ```
 
 
-<h3>**Implementing a Protected API Route**</h3>
+<h3>Implementing a Protected API Route</h3>
 
 
 This protected API route implements server-side JWT verification, which is crucial for securing server-side data access. To securely handle sensitive user data, we'll create a protected API route that verifies the JWT token:
@@ -280,7 +280,7 @@ export async function GET(request: NextRequest) {
 ```
 
 
-<h2>**Security-charged component**</h2>
+<h2>Security-charged component</h2>
 
 
 Now you have server-side JWT verification in the protected API route that provides the necessary security for the UserDataComponent. Here's why:
@@ -308,7 +308,7 @@ However, it's worth noting:
 2. Additional authorization checks might be necessary depending on the specific requirements of your application (e.g., checking user roles or permissions).
 3. While this setup provides good security, always remember that security is a multi-layered concern. This should be part of a comprehensive security strategy including secure coding practices, regular audits, and following the principle of least privilege.
 
-<h2>**Conclusion**</h2>
+<h2>Conclusion</h2>
 
 
 By following these steps and best practices, you can create a secure, authenticated Next.js 14 application using Userfront. Remember to always verify JWTs on the server-side before granting access to sensitive data or protected routes.
