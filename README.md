@@ -1,50 +1,55 @@
 
 
-<h1>Security-charging Your Next.js 14 App with Userfront Authentication</h1>
+# Security-charging Your NextJS 14 App with Userfront Authentication
 
 
-Are you building a Next.js 14 application and looking for a robust, easy-to-implement authentication solution? Look no further! In this comprehensive guide, we'll explore how to integrate Userfront into your Next.js 14 project, and then dive deeper into some best practices.
+# [_Summary_]
 
-<h2>Part 1: Getting Started with Userfront for Next.js 14</h2>
-
-
-<h3>1. Quick Start Guide</h3>
+Whether you're new to authentication in NextJS or looking to migrate to a modern identity and authentication management system, this guide provides you with the knowledge to build a robust, secure authentication system using Userfront in your NextJS 14 application.
 
 
-Userfront provides an excellent[ Quick Start guide](https://userfront.com/docs/quickstart?v=next) for Next.js 14. This guide walks you through the basics of setting up Userfront in your project, including:
+# [_Overview_]
 
+As we build increasingly complex applications with NextJS 14, it's crucial to implement authentication and authorization correctly. Developers know that Identity Management and Authentication (IAM) is a revenue driver. Users need easy security they can place confidence in, and companies need organizational architectures and compliance.
 
-
-* Installing the Userfront Next.js library
-* Adding the Userfront provider to your layout
-* Creating login, signup, and dashboard pages
-
-<h3>2. @userfront/next npm Package</h3>
-
-
-The[ @userfront/next](https://www.npmjs.com/package/@userfront/next) package on npm is specifically designed for Next.js applications. It provides a set of components and hooks that make it easy to add authentication to your Next.js app.
-
-<h3>3. Userfront Next.js Guide</h3>
-
-
-For a more in-depth look at integrating Userfront with Next.js, check out the[ Userfront Next.js Guide](https://userfront.com/docs/examples/next). This guide covers:
+Are you looking for a modern, easy-to-implement IAM that supports NextJS 14 application design and best practices? This article guides you through integrating Userfront authentication into your NextJS 14 app, focusing on security best practices. We'll start by covering the basics of Userfront integration, but our main goal is to dive deep into the implementation of a secure, production-ready authentication system. We explore:
 
 
 
-* Installation and setup
-* Using the UserfrontProvider
-* Client-side components and hooks
-* Server-side methods and authentication
+1. Client-side authentication flows using Userfront's components and hooks
+2. Secure routing and protected layouts in NextJS 14
+3. Implementing server-side verification for sensitive data access, ensuring authorization checks are performed close to the data source
 
-<h3>4. Running Example</h3>
+Throughout, we emphasize the separation of concerns between client and server, the importance of server-side validation, and the proper handling of JWTs.
 
-
-To see Userfront in action with Next.js 14, you can explore the[ Userfront Next.js 14 example](https://github.com/userfront/examples/tree/main/next-14) on GitHub. This example demonstrates a fully functional authentication setup using Userfront in a Next.js 14 application.
-
-<h2>Part 2: Best Practices</h2>
+Let's begin by setting up Userfront in a NextJS 14 project, and then we'll progressively build out our secure authentication infrastructure.
 
 
-Now that we've covered the basics, let's dive into some best practices for using Userfront with Next.js 14. We'll focus on understanding Next.js 14's design principles and how to keep sensitive data secure.
+## **Getting Started with Userfront for NextJS 14**
+
+Userfront provides a comprehensive solution for adding authentication to your NextJS 14 application. It offers a free tier with a user data source prepopulated, plug-and-play components, a range of sign-on methods from emails to SSO, custom JWTs, multi-tenancy, and more. The Userfront Next SDK integrates seamlessly with NextJS, allowing developers to implement secure authentication quickly and efficiently.
+
+Before we dive into the advanced implementation details, let's explore the key resources Userfront offers for NextJS developers to get up and running with basic authentication features. Here are four essential resources to get you started with Userfront in your NextJS 14 project:
+
+
+
+1. [@userfront/next](https://www.npmjs.com/package/@userfront/next) package on npm provides a set of components and hooks that make it easy to add authentication to your Next.js app.
+2. [Quick Start guide](https://userfront.com/docs/quickstart?v=next) walks you through the basics of setting up Userfront in your project, including:
+    * Installing the Userfront Next.js library
+    * Adding the Userfront provider to your layout
+    * Creating login, signup, and dashboard pages
+3. [Userfront Next.js Guide](https://userfront.com/docs/examples/next) is a more in-depth look at integrating Userfront with Next.js. This guide covers:
+    * Installation and setup
+    * Using the UserfrontProvider
+    * Client-side components and hooks
+    * Server-side methods and authentication
+4. [Userfront NextJS 14 example](https://github.com/userfront/examples/tree/main/next-14) on GitHub is a fully functional authentication setup using Userfront in a NextJS 14 application.
+
+
+## **Building on the Userfront NextJS 14 example**
+
+Now that we've covered the basics, let's dive into some best practices for using Userfront with NextJS 14. We'll focus on understanding NextJS 14's design principles and how to keep sensitive data secure.
+
 
 <h3>Setting Up the Project</h3>
 
